@@ -133,6 +133,14 @@ lvim.builtin.which_key.mappings["f"] = {
     q = { "<cmd>wqall<cr>", "save all and quit" },
     Q = { "<cmd>qall!<cr>", "quit without save!!" },
 }
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
+
+function _LAZYGIT_TOGGLE()
+    lazygit:toggle()
+end
+
 lvim.builtin.which_key.mappings["t"] = {
     name = "Telescope",
     r = { "<cmd>Telescope registers<cr>", "Registers" },
@@ -144,6 +152,7 @@ lvim.builtin.which_key.mappings["t"] = {
     ["l"] = { "<cmd>Telescope resume<cr>", "Last Search" },
     ["?"] = { "<cmd>Telescope help_tags<cr>", "Help" },
 }
+
 lvim.builtin.which_key.mappings["g"] = {
     name = "Git",
     g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
