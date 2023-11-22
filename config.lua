@@ -219,6 +219,9 @@ lvim.plugins = {
     {
         "glepnir/lspsaga.nvim",
         branch = "main",
+    },
+    {
+        "ray-x/lsp_signature.nvim",
     }
 
 }
@@ -229,3 +232,4 @@ require('user.hop').setup()
 require('user.fidget').setup()
 require('user.todo_comments').setup()
 require('user.lspsaga').setup()
+require('user.lsp-signature').setup()
