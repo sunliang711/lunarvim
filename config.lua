@@ -20,34 +20,39 @@ vim.opt.tabstop = 4
 vim.opt.timeoutlen = 150
 
 vim.opt.list = true
-vim.opt.listchars = { eol = '↲', tab = '▸ ', trail = '˽' }
+vim.opt.listchars = { eol = "↲", tab = "▸ ", trail = "˽" }
+
+local opts = { noremap = true, silent = true }
+local keymap = vim.api.nvim_set_keymap
+keymap("n", "<c-,>", "<cmd>vertical resize -2<cr>", opts)
+keymap("n", "<c-.>", "<cmd>vertical resize +2<cr>", opts)
 
 -- go to last position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
     callback = function()
-        vim.cmd [[
+        vim.cmd([[
                  if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif
-        ]]
+        ]])
     end,
 })
 
-vim.cmd [[
+vim.cmd([[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]]
+]])
 
 -- format json
-vim.cmd [[
+vim.cmd([[
 command! JsonFormat :%!python3 -m json.tool
-]]
+]])
 
 -- save as root
-vim.cmd [[
+vim.cmd([[
 command! W :execute ':silent w !sudo tee % >/dev/null' | :edit!
 command! Wq :execute ':silent w !sudo tee % >/dev/null' | :edit! | :quit
-]]
+]])
 
 lvim.builtin.cmp.cmdline.enable = true
 lvim.builtin.terminal.open_mapping = "<c-t>"
@@ -199,18 +204,18 @@ lvim.plugins = {
         "tpope/vim-surround",
     },
     {
-        "tpope/vim-repeat"
+        "tpope/vim-repeat",
     },
     {
-        "karb94/neoscroll.nvim"
+        "karb94/neoscroll.nvim",
     },
     {
-        'phaazon/hop.nvim',
-        branch = 'v2'
+        "phaazon/hop.nvim",
+        branch = "v2",
     },
     {
         "j-hui/fidget.nvim",
-        version = "legacy"
+        version = "legacy",
     },
     {
         "folke/todo-comments.nvim",
@@ -222,14 +227,13 @@ lvim.plugins = {
     },
     {
         "ray-x/lsp_signature.nvim",
-    }
-
+    },
 }
 
-require('user.surround').setup()
-require('user.neoscroll').setup()
-require('user.hop').setup()
-require('user.fidget').setup()
-require('user.todo_comments').setup()
-require('user.lspsaga').setup()
-require('user.lsp-signature').setup()
+require("user.surround").setup()
+require("user.neoscroll").setup()
+require("user.hop").setup()
+require("user.fidget").setup()
+require("user.todo_comments").setup()
+require("user.lspsaga").setup()
+require("user.lsp-signature").setup()
