@@ -22,12 +22,12 @@ vim.opt.timeoutlen = 150
 vim.opt.list = true
 vim.opt.listchars = { eol = "↲", tab = "▸ ", trail = "˽" }
 
-local opts = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-keymap("n", "<up>", "<cmd>resize +2<cr>", opts)
-keymap("n", "<down>", "<cmd>resize -2<cr>", opts)
-keymap("n", "<left>", "<cmd>vertical resize -2<cr>", opts)
-keymap("n", "<right>", "<cmd>vertical resize +2<cr>", opts)
+-- local opts = { noremap = true, silent = true }
+-- local keymap = vim.api.nvim_set_keymap
+-- keymap("n", "<up>", "<cmd>resize +2<cr>", opts)
+-- keymap("n", "<down>", "<cmd>resize -2<cr>", opts)
+-- keymap("n", "<left>", "<cmd>vertical resize -2<cr>", opts)
+-- keymap("n", "<right>", "<cmd>vertical resize +2<cr>", opts)
 
 -- go to last position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
@@ -239,3 +239,5 @@ require("user.fidget").setup()
 require("user.todo_comments").setup()
 require("user.lspsaga").setup()
 require("user.lsp-signature").setup()
+
+require("user.basic")

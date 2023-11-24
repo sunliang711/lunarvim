@@ -1,0 +1,5 @@
+require("user.basic.options").setup()
+require("user.basic.options").setup()
+require("user.basic.keymaps").setup()
+require("user.basic.commands").setup()
+require("user.basic.autocmds").setup()
