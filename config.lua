@@ -24,8 +24,10 @@ vim.opt.listchars = { eol = "↲", tab = "▸ ", trail = "˽" }
 
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
-keymap("n", "<c-,>", "<cmd>vertical resize -2<cr>", opts)
-keymap("n", "<c-.>", "<cmd>vertical resize +2<cr>", opts)
+keymap("n", "<up>", "<cmd>resize +2<cr>", opts)
+keymap("n", "<down>", "<cmd>resize -2<cr>", opts)
+keymap("n", "<left>", "<cmd>vertical resize -2<cr>", opts)
+keymap("n", "<right>", "<cmd>vertical resize +2<cr>", opts)
 
 -- go to last position
 vim.api.nvim_create_autocmd({ "BufReadPost" }, {
