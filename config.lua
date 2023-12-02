@@ -201,6 +201,57 @@ lvim.builtin.which_key.mappings["s"] = {
     w = { "<cmd>Lspsaga winbar_toggle<cr>", "Winbar" },
 }
 
+lvim.builtin.which_key.mappings["l"] = {
+    name = "LSP",
+
+    -- Code Action
+    -- a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+    a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+
+    -- d = { "<cmd>TroubleToggle<cr>", "Diagnostics" },
+
+    f = { "<cmd>Lspsaga finder<cr>", "Finder" },
+    -- f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format" },
+    -- F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
+
+    i = { "<cmd>LspInfo<cr>", "Info" },
+    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+    j = {
+        "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
+        "Next Diagnostic",
+    },
+    k = {
+        "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
+        "Prev Diagnostic",
+    },
+    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+
+    -- o = { "<cmd>SymbolsOutline<cr>", "Outline" },
+    o = { "<cmd>Lspsaga outline<cr>", "Outline" },
+
+    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
+
+    -- r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+
+    R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+
+    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    S = {
+        "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
+        "Workspace Symbols",
+    },
+
+    -- t = { '<cmd>lua require("functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
+    t = { "<cmd>Lspsaga term_toggle<cr>", "Terminal" },
+
+    -- w = {
+    --     "<cmd>Telescope lsp_workspace_diagnostics<cr>",
+    --     "Workspace Diagnostics",
+    -- },
+    w = { "<cmd>Lspsaga winbar_toggle<cr>", "Winbar" },
+}
+
 lvim.plugins = {
     {
         "tpope/vim-surround",
