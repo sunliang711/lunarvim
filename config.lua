@@ -194,15 +194,16 @@ lvim.builtin.which_key.mappings["g"] = {
     --     p = { "<cmd>Gist -b -p<cr>", "Create Private" },
     -- },
 }
-lvim.builtin.which_key.mappings["s"] = {
-    name = "Lspsaga",
-    f = { "<cmd>Lspsaga finder<cr>", "Finder" },
-    r = { "<cmd>Lspsaga rename<cr>", "Rename" },
-    o = { "<cmd>Lspsaga outline<cr>", "Outline" },
-    a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
-    t = { "<cmd>Lspsaga term_toggle<cr>", "Terminal" },
-    w = { "<cmd>Lspsaga winbar_toggle<cr>", "Winbar" },
-}
+
+-- lvim.builtin.which_key.mappings["s"] = {
+--     name = "Lspsaga",
+--     f = { "<cmd>Lspsaga finder<cr>", "Finder" },
+--     r = { "<cmd>Lspsaga rename<cr>", "Rename" },
+--     o = { "<cmd>Lspsaga outline<cr>", "Outline" },
+--     a = { "<cmd>Lspsaga code_action<cr>", "Code Action" },
+--     t = { "<cmd>Lspsaga term_toggle<cr>", "Terminal" },
+--     w = { "<cmd>Lspsaga winbar_toggle<cr>", "Winbar" },
+-- }
 
 lvim.builtin.which_key.mappings["l"] = {
     name = "LSP",
