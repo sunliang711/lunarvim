@@ -89,11 +89,14 @@ lvim.builtin.which_key.mappings["b"] = {
     name = "Buffer manage",
     h = { "<cmd>BufferLineCloseLeft<cr>", "close all to the left" },
     l = { "<cmd>BufferLineCloseRight<cr>", "close all to the right" },
-    p = { "<cmd>BufferLineCyclePrev<cr>", "previous" },
-    b = { "<cmd>BufferLineCyclePrev<cr>", "previous" },
-    n = { "<cmd>BufferLineCycleNext<cr>", "next" },
-    j = { "<cmd>BufferLinePick<cr>", "jump" },
+    o = { "<cmd>BufferLineCloseOthers<cr>", "close all other tabs" },
     c = { "<cmd>BufferLinePickClose<cr>", "pick buffer to close" },
+
+    p = { "<cmd>BufferLineCyclePrev<cr>", "previous" },
+    n = { "<cmd>BufferLineCycleNext<cr>", "next" },
+
+    b = { "<cmd>BufferLineCyclePrev<cr>", "previous" },
+    j = { "<cmd>BufferLinePick<cr>", "jump" },
 }
 lvim.builtin.which_key.mappings["w"] = {
     name = "Window and Tab",
@@ -281,6 +284,9 @@ lvim.plugins = {
     {
         "ray-x/lsp_signature.nvim",
     },
+    {
+        "rmagatti/auto-session",
+    },
 }
 
 require("user.surround").setup()
@@ -290,5 +296,6 @@ require("user.fidget").setup()
 require("user.todo_comments").setup()
 require("user.lspsaga").setup()
 require("user.lsp-signature").setup()
+require("user.auto-session").setup()
 
 require("user.basic")
